@@ -11,8 +11,11 @@ class Accordion extends React.Component {
         currentTabIndex: null
     };
 
-    renderContent() {
+    renderContent(current) {
         const currentSection = this.props.sections[this.state.currentTabIndex];
+        if(!current) {
+            return '';
+        }
         return (
             <p>{currentSection.content}</p>
         )
@@ -28,7 +31,7 @@ class Accordion extends React.Component {
                 <button onClick={() => this.handleClick(index)}>
                 {section.title}
                 </button>
-                {(index === this.state.currentTabIndex) ? this.renderContent() : ''}
+                {this.renderContent(index === this.state.currentTabIndex)}
             </li>
         ))
     }
