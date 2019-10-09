@@ -21,3 +21,11 @@ ul p {
     text-align: center;
 }
 
+.section-content {
+    display: none;
+}
+
+.section-content.current {
+   display: block;
+}
+
