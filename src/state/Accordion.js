@@ -1,4 +1,5 @@
 import React from 'react';
+import './Accordion.css';
 
 class Accordion extends React.Component {
 
@@ -7,7 +8,7 @@ class Accordion extends React.Component {
     };
 
     state = {
-        currentTabIndex: 0
+        currentTabIndex: null
     };
 
     renderContent() {
@@ -27,7 +28,7 @@ class Accordion extends React.Component {
                 <button onClick={() => this.handleClick(index)}>
                 {section.title}
                 </button>
-                {this.props.sections.length && this.renderContent()}
+                {(index === this.state.currentTabIndex) ? this.renderContent() : ''}
             </li>
         ))
     }
