@@ -22,10 +22,14 @@ ul p {
 }
 
 .section-content {
-    display: none;
+    visibility: hidden;
+    max-height: 0;
+    margin: 0;
 }
 
 .section-content.current {
-   display: block;
+   visibility: visible;
+   max-height: none;
+   margin: 20px 0;
 }
 
